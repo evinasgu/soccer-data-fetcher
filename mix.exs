@@ -13,7 +13,7 @@ defmodule MinimalServer.MixProject do
 
   def application do
     [
-      extra_applications: [:logger],
+      extra_applications: [:logger, :nimble_csv],
       mod: {MinimalServer.Application, []}
     ]
   end
@@ -24,7 +24,9 @@ defmodule MinimalServer.MixProject do
       {:plug, "~> 1.7.2"},
       {:cowboy, "~> 2.6.1"},
       {:credo, "~> 1.0.3", except: :prod, runtime: false},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:nimble_csv, "~> 0.3"},
+      {:riakc, github: "basho/riak-erlang-client"}
     ]
   end
 end
