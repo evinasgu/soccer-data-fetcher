@@ -6,14 +6,12 @@ defmodule MinimalServer.Business do
 
   def present_results_given_league_season(league, season) do
     RiakDataFetcher.fetch_results_given_league_season(league, season)
-    |> Poison.encode!
   end
 
   def present_available_results do
     RiakDataFetcher.fetch_available_results
     |> Stream.map(fn item -> decorate_available_result(item) end)
     |> Enum.to_list
-    |> Poison.encode!
   end
 
   defp decorate_available_result(map_item) do
