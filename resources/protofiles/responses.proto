@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+message AvailableResults {
+  repeated string resultType = 1;
+}
+
+message ResultItem {
+  string id = 1;
+  string div = 2;
+  string season = 3;
+  string date = 4;
+  string home_team = 5;
+  string away_team = 6;
+  string fthg = 7;
+  string ftag = 8;
+  string ftr = 9;
+  string hthg = 10;
+  string htag = 11;
+  string htr = 12;
+}
+
+message Result {
+  repeated ResultItem Result = 1;
+}

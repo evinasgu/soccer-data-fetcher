@@ -26,7 +26,9 @@ defmodule MinimalServer.MixProject do
       {:credo, "~> 1.0.3", except: :prod, runtime: false},
       {:plug_cowboy, "~> 2.0"},
       {:nimble_csv, "~> 0.3"},
-      {:riakc, github: "basho/riak-erlang-client"}
+      {:riakc, github: "basho/riak-erlang-client"},
+      {:protobuf, "~> 0.5.3"},
+      {:google_protos, "~> 0.1"}
     ]
   end
 end

@@ -6,12 +6,12 @@ defmodule MinimalServer.RiakDataLoader do
   require Logger
 
   def load_all_rows do
-    read_csv_data("Data.csv")
+    read_csv_data("./resources/Data.csv")
     |> save_to_riak('127.0.0.1', 8087, "soccer_results_bucket", "results")
   end
 
   def load_available_results() do
-    read_csv_data("Data.csv")
+    read_csv_data("./resources/Data.csv")
     |> Stream.uniq_by(fn %{away_team: _, date: _, div: div, ftag:  _, fthg: _, ftr: _, home_team: _, htag: _, hthg: _, htr: _, id: _, season: season} -> {div, season} end)
     |> Enum.to_list()
     |> Enum.map(fn x -> %{div: Map.get(x, :div), season: Map.get(x, :season)} end)
