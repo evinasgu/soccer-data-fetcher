@@ -9,22 +9,6 @@ services:
       - CLUSTER_NAME=riakkv
     labels:
       - "com.basho.riak.cluster.name=riakkv"
-    # volumes:
-    #   - schemas:/etc/riak/schemas
-  # member:
-  #   image: basho/riak-kv
-  #   ports:
-  #     - "8087"
-  #     - "8098"
-  #   labels:
-  #     - "com.basho.riak.cluster.name=riakkv"
-  #   links:
-  #     - coordinator
-  #   depends_on:
-  #     - coordinator
-  #   environment:
-  #     - CLUSTER_NAME=riakkv
-  #     - COORDINATOR_NODE=coordinator
   soccer_data_fetcher:
     build: .
     command: mix run --no-halt
