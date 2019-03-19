@@ -2,11 +2,11 @@ defmodule SoccerDataFetcher.RiakDataFetcher do
   @behaviour SoccerDataFetcher.DataFetcher
 
   def fetch_available_results do
-    fetch_data('127.0.0.1', 8087, "soccer_results_bucket", "available_results")
+    fetch_data('172.18.0.2', 8087, "soccer_results_bucket", "available_results")
   end
 
   def fetch_results_given_league_season(league, season) do
-    fetch_data('127.0.0.1', 8087, "soccer_results_bucket", "results")
+    fetch_data('172.18.0.2', 8087, "soccer_results_bucket", "results")
     |> Stream.filter(fn (x) ->
       Map.get(x, :div) == league and Map.get(x, :season) == season end)
     |> Enum.to_list    
