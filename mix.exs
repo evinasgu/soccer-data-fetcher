@@ -5,7 +5,7 @@ defmodule SoccerDataFetcher.MixProject do
     [
       app: :soccer_data_fetcher,
       version: "0.1.0",
-      elixir: "~> 1.7",
+      elixir: "~> 1.8.1",
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
@@ -28,7 +28,8 @@ defmodule SoccerDataFetcher.MixProject do
       {:nimble_csv, "~> 0.3"},
       {:riakc, github: "basho/riak-erlang-client"},
       {:protobuf, "~> 0.5.3"},
-      {:google_protos, "~> 0.1"}
+      {:google_protos, "~> 0.1"},
+      {:distillery, "~> 2.0"}
     ]
   end
 end
