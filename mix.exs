@@ -1,9 +1,9 @@
-defmodule MinimalServer.MixProject do
+defmodule SoccerDataFetcher.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :minimal_server,
+      app: :soccer_data_fetcher,
       version: "0.1.0",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
@@ -14,7 +14,7 @@ defmodule MinimalServer.MixProject do
   def application do
     [
       extra_applications: [:logger, :nimble_csv],
-      mod: {MinimalServer.Application, []}
+      mod: {SoccerDataFetcher.Application, []}
     ]
   end
 

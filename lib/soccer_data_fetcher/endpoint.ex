@@ -1,9 +1,9 @@
-defmodule MinimalServer.Endpoint do
+defmodule SoccerDataFetcher.Endpoint do
   use Plug.Router
   use Plug.Debugger
   use Plug.ErrorHandler
 
-  alias MinimalServer.Router
+  alias SoccerDataFetcher.Router
   alias Plug.{Cowboy}
 
   require Logger

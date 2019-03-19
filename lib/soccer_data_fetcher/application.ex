@@ -1,8 +1,8 @@
-defmodule MinimalServer.Application do
+defmodule SoccerDataFetcher.Application do
   use Application
 
-  alias MinimalServer.Endpoint
-  alias MinimalServer.RiakDataLoader
+  alias SoccerDataFetcher.Endpoint
+  alias SoccerDataFetcher.RiakDataLoader
 
   def start(_type, _args) do
     RiakDataLoader.load_all_rows()
@@ -19,7 +19,7 @@ defmodule MinimalServer.Application do
   defp opts do
     [
       strategy: :one_for_one,
-      name: MinimalServer.Supervisor
+      name: SoccerDataFetcher.Supervisor
     ]
   end
 end

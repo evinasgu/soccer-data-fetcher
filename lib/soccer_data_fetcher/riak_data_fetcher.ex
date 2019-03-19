@@ -1,5 +1,5 @@
-defmodule MinimalServer.RiakDataFetcher do
-  @behaviour MinimalServer.DataFetcher
+defmodule SoccerDataFetcher.RiakDataFetcher do
+  @behaviour SoccerDataFetcher.DataFetcher
 
   def fetch_available_results do
     fetch_data('127.0.0.1', 8087, "soccer_results_bucket", "available_results")

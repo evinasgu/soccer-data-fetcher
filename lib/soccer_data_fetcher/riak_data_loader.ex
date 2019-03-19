@@ -1,5 +1,5 @@
-defmodule MinimalServer.RiakDataLoader do
-  @behaviour MinimalServer.DataLoader
+defmodule SoccerDataFetcher.RiakDataLoader do
+  @behaviour SoccerDataFetcher.DataLoader
 
   alias NimbleCSV.RFC4180
 

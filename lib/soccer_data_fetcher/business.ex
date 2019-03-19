@@ -1,6 +1,6 @@
-defmodule MinimalServer.Business do
+defmodule SoccerDataFetcher.Business do
 
-  alias MinimalServer.RiakDataFetcher
+  alias SoccerDataFetcher.RiakDataFetcher
 
   require Logger
 

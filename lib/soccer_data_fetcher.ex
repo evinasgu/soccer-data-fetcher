@@ -1,0 +1,2 @@
+defmodule SoccerDataFetcher do
+end
