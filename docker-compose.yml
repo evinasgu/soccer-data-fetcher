@@ -1,0 +1,26 @@
+version: "3"
+services:
+  coordinator:
+    image: basho/riak-kv
+    ports:
+      - "8087:8087"
+      - "8086:8098"
+    environment:
+      - CLUSTER_NAME=riakkv
+    labels:
+      - "com.basho.riak.cluster.name=riakkv"
+  soccer_data_fetcher:
+    build: .
+    command: mix run --no-halt
+    volumes:
+      - .:/app
+    ports:
+      - "4000:4000"
+    depends_on:
+      - coordinator
+
+volumes:
+  schema:
+    external: false
+
+  

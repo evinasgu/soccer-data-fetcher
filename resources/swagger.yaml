@@ -1,0 +1,102 @@
+swagger: "2.0"
+info:
+  description: "This is a an api to fetch some types of soccer results"
+  version: "1.0.0"
+  title: "Soccer Data Fetcher"
+  contact:
+    email: "enyert.vinas@gmail.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+basePath: "/api/v1/"
+tags:
+- name: "results"
+  description: "Soccer Results"
+- name: "available results"
+  description: "The type of results available to fetch"
+schemes:
+- "https"
+- "http"
+paths:
+  /leagues/{league_name}/seasons/{season_period}/results:
+    get:
+      tags:
+      - "results"
+      summary: "Find results of fiven league and period"
+      description: "Find results of fiven league and period"
+      operationId: "findResults"
+      produces:
+      - "application/json"
+      - "application/x-protobuf"
+      parameters:
+      - name: "league_name"
+        in: "path"
+        description: "league value that needs to be considered for filter"
+        required: true
+        type: "string"
+      - name: "season_period"
+        in: "path"
+        description: "season period value that needs to be considered for filter"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Result"
+        400:
+          description: "Bad Request"
+  /availableResults:
+    get:
+      tags:
+      - "available results"
+      - "available"
+      - "results"
+      summary: "Find avaible results to fetch"
+      description: "Find avaible results to fetch"
+      operationId: "findAvailableResults"
+      produces:
+      - "application/json"
+      - "application/x-protobuff"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              type: "string"
+        400:
+          description: "Bad Request"
+definitions:
+  Result:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      season:
+        type: "string"
+      htr:
+        type: "string"
+      hthg:
+        type: "string"
+      htag:
+        type: "string"
+      home_team:
+        type: "string"
+      ftr:
+        type: "string"
+      fthg:
+        type: "string"
+      ftag:
+        type: "string"
+      div:
+        type: "string"
+      date:
+        type: "string"
+      away_team:
+        type: "string"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
